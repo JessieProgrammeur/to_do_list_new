@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}To Do List{% endblock %}
+
+    {% block body %}
+        {% if lists %}
+        <table id="lists" class="table table-striped">
+        <thead>
+            <tr>
+            <th>Task List</th>
+            <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for list in lists %}
+            <tr>
+                <td>{{ list.title }}</td>
+                <td>
+                <a href="/list/{{ list.id }}" class="btn btn-dark">Show</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+        </table>
+    {% else %}
+        <p>No Task to display</p>
+    {% endif %}
+{% endblock %}
