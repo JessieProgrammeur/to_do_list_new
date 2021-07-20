@@ -17,6 +17,8 @@
                 <td>{{ list.title }}</td>
                 <td>
                 <a href="/list/{{ list.id }}" class="btn btn-dark">Show</a>
+                <a href="#" class="btn btn-danger delete-article" data-id="{
+                    { list.id }}">Delete</a>
                 </td>
             </tr>
             {% endfor %}
@@ -25,4 +27,8 @@
     {% else %}
         <p>No Task to display</p>
     {% endif %}
+{% endblock %}
+
+{% block javascripts %}
+  <script src="/js/main.js"></script>
 {% endblock %}
